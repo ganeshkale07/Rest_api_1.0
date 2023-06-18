@@ -33,7 +33,7 @@ const loginController = {
         }
 
         // step 3 - Generate token now
-        let access_token = JwtToken.signToken({_id : result._id , role : result.role});
+        let access_token = JwtToken.signToken({_id : isItRealUser._id , role : isItRealUser.role});
 
         res.json({
             "message" : "logged in sucessfully!",

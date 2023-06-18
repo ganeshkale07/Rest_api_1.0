@@ -2,8 +2,13 @@ import {SECRET_KEY} from '../config';
 import jwt from "jsonwebtoken";
 
 export default class JwtToken {
-    static signToken(payload, expiry = '60s', secretKey = SECRET_KEY){
+    static signToken(payload, expiry = '240s', secretKey = SECRET_KEY){
         return jwt.sign(payload, secretKey, {expiresIn : expiry})       
+        
+    }
+
+    static verifyToken(token, secretKey = SECRET_KEY){
+        return jwt.verify(token, secretKey);       
         
     }
 }

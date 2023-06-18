@@ -16,6 +16,16 @@ class CustomErrorHandler extends Error {
         return new CustomErrorHandler(401 , message);
         //401 authentication error
     }
+
+    static unauthorized(message = "Unauthorized"){
+        return new CustomErrorHandler(401 , message);
+        //401 authentication error
+    }
+
+    static notFound(message = "401 do not found!"){
+        return new CustomErrorHandler(401 , message);
+        //401 authentication error
+    }
 }
 
 export default CustomErrorHandler;
