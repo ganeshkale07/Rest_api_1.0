@@ -4,7 +4,6 @@ import JwtToken from "../services/JwtToken";
 
 export default function auth (req,res,next) {
     const authHeader = req.headers.authorization;
-    console.log(authHeader)
     if(!authHeader){
         return next(CustomErrorHandler.unauthorized());
     }
